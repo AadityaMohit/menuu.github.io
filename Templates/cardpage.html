@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block body %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+
+  select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+
+  .payment-methods {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .payment-option {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    background: #fff;
+  }
+
+  .payment-option:hover {
+    border-color: #007BFF;
+  }
+
+  .btn-pay {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: linear-gradient(to right, #9affee, #06c797);
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .btn-pay:hover {
+    transform: scale(1.1);
+  }
+
+  .card-details {
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .card-details label {
+    font-weight: bold;
+  }
+
+  .card-details input {
+    margin: 5px 0;
+  }
+</style>
+</head>
+<body>
+<div class="container my-4">
+
+    <p>Select a card and enter your details.</p>
+    <div class="card-details">
+      <form action="{% url "cardpage" %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" class="form-control" name="cardnumber" id="cardNumber" placeholder="Enter card number">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="expirationDate">Expiration Date</label>
+            <input type="text" class="form-control" id="expirationDate" name="expirationDate" placeholder="YYYY-MM-DD">
+            <strong>Input Date in YYYY-MM-DD format</strong>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="cvv">CVV</label>
+            <input type="text" class="form-control" id="cvv" name="cvv" placeholder="CVV">
+          </div>
+        </div>
+        <label for="cardBrand">Card Brand</label>
+        <select class="form-control" name="cardBrand" id="cardBrand">
+          <option value="sbi">SBI</option>
+          <option value="pnb">PNB</option>
+          <option value="bbo">BBO</option>
+        </select>
+
+        <div class="form-group">
+          <label for="cardHolderName">Card Holder Name</label>
+          <input type="text" class="form-control" id="cardHolderName" name="cardHolderName" placeholder="Enter cardholder's name">
+        </div>
+        <button type="submit" class="btn btn-pay">Pay with Card</button>
+        
+      </form>
+    </div>
+  </div>
+ 
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+
+
+{% endblock body %}

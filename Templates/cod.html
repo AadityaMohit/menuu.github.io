@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cash on Delivery Order Form</title>
+</head>
+<body>
+    <header>
+        <h1>Cash on Delivery Order Form</h1>
+    </header>
+    <main>
+        <section class="info">
+            <h2>Welcome to our Cash on Delivery Payment Option</h2>
+            <p>At [Your Company Name], we understand the convenience of paying with cash when you receive your order. Please provide your delivery information below to complete your order.</p>
+        </section>
+
+        <section class="order-form">
+            <h3>Delivery Information</h3>
+            <form id="cod-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" required></textarea>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="notes">Additional Notes (if any):</label>
+                <textarea id="notes" name="notes"></textarea>
+
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <section class="contact">
+            <h3>Contact Us</h3>
+            <p>If you have any questions or need assistance, our customer support team is here to help. You can reach us via email at <a href="mailto:your@email.com">your@email.com</a> or by phone at <a href="tel:123-456-7890">123-456-7890</a>.</p>
+        </section>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

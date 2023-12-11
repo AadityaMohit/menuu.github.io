@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% comment %} {% block about %}active{% endblock about %} {% endcomment %}
+
+{% block title %}About{% endblock title %}
+{% block body %}
+<style>
+  body {
+      background: url('/static/bg2.jpeg') no-repeat center center fixed; /* Replace 'your-image.jpg' with your image file path */
+      background-size: cover;
+  }
+  .tet{
+    padding:0px;
+    margin: 0px -21px 0px ;
+}
+  .content {
+      background: rgba(255, 255, 255, 0.7); /* Optional: Add a semi-transparent background color to the content for better readability */
+      padding: 20px;
+  }
+</style>
+<div class="container-fluid ">
+  <div class="container-xxl">
+<div class="tet">
+<div class="img">
+<img src="/static/logo.jpeg" alt="" srcset="">
+
+</div>
+<div class="container my-4">
+
+
+
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <strong>Meet Aaditya Mohit: The Web Developer Extraordinaire</strong> 
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                 
+      
+      In the ever-evolving digital realm, there are individuals who possess the power to shape the online world, breathing life into the virtual spaces we navigate daily. Among these digital artisans,I stands as a true luminary in the field of web development.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <strong>About Me:</strong> 
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+               
+      
+              Hello, I'm Aaditya Mohit, and I'm delighted to have the opportunity to share a little bit about myself with you. I believe that every person is a unique blend of experiences, passions, and aspirations, and I'm no exception.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <strong>Upcoming services</strong> 
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+               
+                The future is brimming with exciting possibilities, and I'm thrilled to give you a sneak peek into the upcoming services that are in the pipeline. At hotel Mohit, we are committed to delivering innovative solutions that cater to your evolving needs and the ever-changing digital landscape.
+            </div>
+          </div>
+ 
+      </div>
+
+
+
+
+</div>
+<div class="container my-4 text-center bg-white text-dark ">
+
+  <form action="{% url 'about' %}" method="post">
+    
+    {% csrf_token%}   
+    <div class="mb-3">
+      <div class="mb-3">
+        <label for="feedback" class="form-label"><b>
+          <u><h2>Give Your Feedback Here</h2></u>
+        </b></label>
+        <input type="text" placeholder="Enter your feedback here " style="backgroundColor:dark" class="form-control" id="feedback" name="feedback" aria-describedby="emailHelp">
+        
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  
+</div>
+  
+{% endblock body %}

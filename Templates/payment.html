@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .payment-option {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.3s ease;
+      background: #fff;
+    }
+
+    .payment-option:hover {
+      border-color: #007BFF;
+    }
+
+    .btn-pay {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background: linear-gradient(to right, #9affe6, #c4dafa);
+      border-radius: 25px;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .btn-pay:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+<div class="container my-4">
+  <h3>Choose Payment Method</h3>
+  <div class="payment-methods">
+    <div class="payment-option">
+      <h4>Card Payment</h4>
+      <img src="/static/lol.jpeg" alt="Card Icon" width="300">
+      <p>Select a card and enter your details.</p>
+      <a href="/cardpage" class="btn btn-pay">Pay with Card</a>
+    </div>
+  <br>
+  <br>
+    <div class="payment-option">
+      <h4>Cash on Delivery</h4>
+      <img src="/static/loop.jpeg" alt="Cash Icon" width="300">
+      <p>Pay with cash when the product is delivered.</p>
+      <a href="/form" class="btn btn-pay">Pay on Delivery</a>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
